@@ -1,22 +1,21 @@
 import sys
-# Comprobación de seguridad, ejecutar sólo si se recibe 3 argumentos
-if len(sys.argv) == 2:
-    import datetime
+
+if len(sys.argv)==4:
     import os
-    marca_de_tiempo = datetime.datetime.now()
-    marca_de_tiempo = int(datetime.datetime.timestamp(marca_de_tiempo))
+    import datetime
 
-    #temperatura = sys.argv[1]
-    #humedad = sys.argv[2]
-    lluvia = sys.argv[1]
-    temperatura = input('Ingrese la temperatura en grados centígrados')
-    humedad = input('Ingrese el porcentaje de humedad')
-    linea = str(marca_de_tiempo) + ',' + temperatura + ',' + humedad + ',' + lluvia
+    marcadetiempo=datetime.datetime.now()
+    marcadetiempo=int(datetime.datetime.timestamp(marcadetiempo))
 
-    logs_lluvia = open('clase09_ej2.csv', 'a')
-    logs_lluvia.write(linea+'\n')
+    temperatura=sys.argv[1]
+    humedad=sys.argv[2]
+    llovio=sys.argv[3]
+    linea=(str(marcadetiempo) + ", temperatura: "+ temperatura + ". humedad: "+ humedad + ". llovio? "+llovio)
+
+
+    logs_lluvia=open("clase09_ej2.csv","a")
+    logs_lluvia.write(linea +"\n")
     logs_lluvia.close()
-
 else:
-    print("ERROR: Introdujo una cantidad de argumentos distinta de tres (3)")
-    print('Ejemplo: clase09_ej1.py <temperatura> <humedad> <True o False>')
+    print("No se han detectado 3 elementos, porfavor asegurese de introducirlos")
+    print("Ejemplo: clase09_ej2.py <temperatura> <humedad> <llovio>")

@@ -1,7 +1,2 @@
-timestamp,humedad,temperatura,lluvia
-1645191499,29,45,False
-1645191585,29,47,False
-1645191620,27,50,False
-1645191651,27,50,False
-1645191869,30,40,False
-1645191902,31,45,True
+1715379140, temperatura: 15. humedad: 2. llovio? True
+1715379190, temperatura: 15. humedad: 2. llovio? True
